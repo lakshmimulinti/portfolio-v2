@@ -1,0 +1,7 @@
+@import '../variables';
+
+.contactWrapper {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $radius-lg;
+}

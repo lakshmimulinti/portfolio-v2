@@ -1,0 +1,14 @@
+@import '../variables';
+
+.skillCard {
+  background: $card-bg;
+  border: 1px solid $card-border;
+  border-radius: $radius-md;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($primary-color, 0.5);
+    box-shadow: 0 10px 20px rgba($primary-color, 0.1);
+  }
+}

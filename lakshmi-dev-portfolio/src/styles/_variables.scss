@@ -1,0 +1,18 @@
+$bg-dark: #0b0f17;
+$card-bg: rgba(15, 23, 42, 0.7);
+$card-border: #1e293b;
+$primary-color: #f43f5e;
+$primary-hover: #e11d48;
+$text-main: #f8fafc;
+$text-muted: #94a3b8;
+$glass-bg: rgba(15, 23, 42, 0.85);
+
+$radius-lg: 16px;
+$radius-md: 8px;
+
+@mixin glassmorphism {
+  background: $glass-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

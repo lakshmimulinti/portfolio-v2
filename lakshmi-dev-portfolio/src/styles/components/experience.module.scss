@@ -1,0 +1,11 @@
+@import '../variables';
+
+.card {
+  background: $card-bg;
+  border-radius: $radius-lg;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba($primary-color, 0.4) !important;
+  }
+}

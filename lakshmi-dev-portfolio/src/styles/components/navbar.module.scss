@@ -1,0 +1,40 @@
+@import '../variables';
+
+.header {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1080px;
+  z-index: 1000;
+}
+
+.navbar {
+  @include glassmorphism;
+  border-radius: 50px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-main;
+  text-decoration: none;
+
+  span {
+    color: $primary-color;
+  }
+}
+
+.navLink {
+  color: $text-muted;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
