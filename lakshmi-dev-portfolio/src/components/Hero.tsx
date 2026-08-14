@@ -1,7 +1,7 @@
 // src/components/Hero.tsx
 import React from 'react';
 import styles from '../styles/components/hero.module.scss';
-import profileImg from '../assets/profileimg.jpg';
+import profileImg from '../assets/profileimg.png';
 
 export const Hero: React.FC = () => {
   return (
@@ -40,14 +40,22 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Image WITH Cloud Background Layer */}
+          {/* Right Column: Image with Cloud Glow Layer */}
           <div className="col-lg-5 d-flex justify-content-center">
             <div className={styles.imageWrapper}>
-              {/* Animated Cloud Glow Effect Behind Image */}
               <div className={styles.cloudGlow}></div>
               
               <div className={styles.imageCard}>
-                <img src={profileImg} alt="Lakshmi Mulinti" />
+                <img 
+                  src={profileImg} 
+                  alt="Lakshmi Mulinti" 
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'top center'
+                  }}
+                />
               </div>
             </div>
           </div>

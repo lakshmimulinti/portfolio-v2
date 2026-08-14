@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
               
               {/* LinkedIn Vector SVG */}
               <a 
-                href="https://www.linkedin.com/in/lakshmimulinti/" 
+                href="https://www.linkedin.com/in/lakshmi-mulinti-aaba97296" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"

@@ -6,7 +6,6 @@ import { ExternalLink } from 'lucide-react';
 import hostelImg from '../assets/hostel.png';
 import talentImg from '../assets/talent.png';
 import webDesignImg from '../assets/websitesdesign.png';
-import profileImg from '../assets/profileimg.jpg';
 
 interface ProjectItem {
   id: string;
@@ -15,7 +14,7 @@ interface ProjectItem {
   tags: string[];
   image: string;
   liveUrl: string;
-  objectPosition?: string; // Custom positioning for image focus
+  objectPosition?: string;
 }
 
 const projectData: ProjectItem[] = [
@@ -45,15 +44,6 @@ const projectData: ProjectItem[] = [
     image: webDesignImg,
     liveUrl: 'https://indiafileswebsite-1.onrender.com/',
     objectPosition: 'center'
-  },
-  {
-    id: 'proj-4',
-    title: 'Lakshmi Mulinti Portfolio V1',
-    description: 'My official personal developer portfolio showcasing skills, full-stack projects, interactive tools, and direct contact integration.',
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'Vercel'],
-    image: profileImg,
-    liveUrl: 'https://lmportfolio.vercel.app',
-    objectPosition: 'top center' // 👈 Face & Head 100% visible avvadaniki top positioning
   }
 ];
 
@@ -69,9 +59,10 @@ export const Portfolio: React.FC = () => {
         </p>
       </div>
 
+      {/* Grid for 3 cards */}
       <div className="row g-4 justify-content-center">
         {projectData.map((proj) => (
-          <div key={proj.id} className="col-md-6">
+          <div key={proj.id} className="col-lg-4 col-md-6">
             <a 
               href={proj.liveUrl} 
               target="_blank" 
@@ -88,7 +79,7 @@ export const Portfolio: React.FC = () => {
                 {/* Project Image Banner */}
                 <div 
                   style={{ 
-                    height: '220px', 
+                    height: '200px', 
                     overflow: 'hidden', 
                     background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
                     position: 'relative'
@@ -102,7 +93,7 @@ export const Portfolio: React.FC = () => {
                       width: '100%', 
                       height: '100%', 
                       objectFit: 'cover',
-                      objectPosition: proj.objectPosition || 'top center' // 👈 Corrects crop focus
+                      objectPosition: proj.objectPosition || 'center'
                     }}
                   />
                 </div>
