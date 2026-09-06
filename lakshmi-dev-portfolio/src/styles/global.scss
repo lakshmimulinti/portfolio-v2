@@ -2,88 +2,224 @@
 @import "./custom-bootstrap";
 @import "./variables";
 
-/* ==========================================================
-   1. THREE DYNAMIC THEMES SETUP (Rose, Cyan, Emerald)
-   ========================================================== */
-
-/* Theme 1: Rose Cyber (Default) */
-:root, body[data-theme='rose'] {
-  --primary-accent: #f43f5e;
-  --primary-gradient: linear-gradient(135deg, #f43f5e 0%, #fb923c 100%);
-  --badge-bg: rgba(244, 63, 94, 0.25);
-  --badge-color: #fb7185;
-  --badge-border: rgba(244, 63, 94, 0.6);
-  --btn-primary-bg: #f43f5e;
-  --cloud-glow-bg: radial-gradient(circle, rgba(244, 63, 94, 0.65) 0%, rgba(56, 189, 248, 0.4) 45%, rgba(0, 0, 0, 0) 70%);
-}
-
-/* Theme 2: Cyan Neon */
-body[data-theme='cyan'] {
-  --primary-accent: #06b6d4;
-  --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-  --badge-bg: rgba(6, 182, 212, 0.25);
-  --badge-color: #38bdf8;
-  --badge-border: rgba(6, 182, 212, 0.6);
-  --btn-primary-bg: #0284c7;
-  --cloud-glow-bg: radial-gradient(circle, rgba(6, 182, 212, 0.65) 0%, rgba(147, 51, 234, 0.4) 45%, rgba(0, 0, 0, 0) 70%);
-}
-
-/* Theme 3: Emerald Tech */
-body[data-theme='emerald'] {
-  --primary-accent: #10b981;
-  --primary-gradient: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-  --badge-bg: rgba(16, 185, 129, 0.25);
-  --badge-color: #34d399;
-  --badge-border: rgba(16, 185, 129, 0.6);
-  --btn-primary-bg: #059669;
-  --cloud-glow-bg: radial-gradient(circle, rgba(16, 185, 129, 0.65) 0%, rgba(59, 130, 246, 0.4) 45%, rgba(0, 0, 0, 0) 70%);
-}
-
-/* Global Dynamic Color Apply */
-.btn-primary {
-  background-color: var(--btn-primary-bg) !important;
-  border-color: var(--btn-primary-bg) !important;
-}
-
-.text-primary {
-  color: var(--primary-accent) !important;
-}
-
 html, body {
   background-color: transparent !important;
   color: #f8fafc;
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ==========================================================
-   2. PERMANENT SKILLS SECTION & BADGE CONTRAST FIX
-   ========================================================== */
+/* Headings */
+h2, .section-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9) !important;
+}
 
-#skills .badge, 
-.skill-card .badge, 
-.badge.bg-secondary {
-  background-color: var(--badge-bg) !important;
-  color: var(--badge-color) !important;
-  border: 1px solid var(--badge-border) !important;
+.text-muted {
+  color: #94a3b8 !important;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   GLOBAL INTERACTIVE CARDS (About, Services, Education, Experience, Portfolio)
+   ========================================================================== */
+.card,
+.custom-card,
+#services .card,
+#about .card,
+#about .custom-card,
+#experience .card,
+#education .card {
+  background: linear-gradient(145deg, rgba(13, 21, 38, 0.95) 0%, rgba(20, 30, 52, 0.95) 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.22) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    border-color: #38bdf8 !important;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.95) 100%) !important;
+    box-shadow: 
+      0 18px 35px rgba(0, 0, 0, 0.85),
+      0 0 20px rgba(56, 189, 248, 0.4),
+      0 0 35px rgba(244, 63, 94, 0.28) !important;
+  }
+
+  &:active {
+    transform: translateY(-3px) scale(0.98) !important;
+    border-color: #f43f5e !important;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.95) 0%, rgba(136, 19, 55, 0.95) 100%) !important;
+    box-shadow: 
+      0 0 25px rgba(244, 63, 94, 0.6),
+      0 0 45px rgba(56, 189, 248, 0.5) !important;
+  }
+}
+
+/* ==========================================================================
+   EDUCATION & CERTIFICATIONS BADGES & AVATARS
+   ========================================================================== */
+.score-pill {
+  background-color: #0284c7 !important;
+  color: #ffffff !important;
+  font-size: 0.85rem !important;
   font-weight: 700 !important;
-  font-size: 0.8rem !important;
-  padding: 6px 14px !important;
-  border-radius: 20px !important;
-  text-shadow: none !important;
-  box-shadow: 0 0 12px var(--badge-bg);
+  padding: 5px 14px !important;
+  border-radius: 50rem !important;
+  box-shadow: 0 0 14px rgba(2, 132, 199, 0.65) !important;
+  display: inline-block;
 }
 
-/* Card Container Overrides */
-.card, .p-3.bg-dark, .p-4.bg-dark {
-  background-color: rgba(15, 23, 42, 0.88) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+.year-pill {
+  background-color: rgba(56, 189, 248, 0.15) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+  font-size: 0.78rem !important;
+  padding: 5px 12px !important;
+  border-radius: 50rem !important;
+  display: inline-block;
 }
 
+.award-avatar-cert {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(244, 63, 94, 0.18) !important;
+  color: #f43f5e !important;
+  border: 1.5px solid rgba(244, 63, 94, 0.45) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-#services p, 
-#services .small {
-  color: #e2e8f0 !important; /* Forces all description text in Services cards to be bright readable light gray */
-  opacity: 1 !important;
-  font-weight: 400 !important;
+.award-avatar-edu {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.18) !important;
+  color: #38bdf8 !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   CONTACT SECTION: INPUT FIELDS ONLY HOVER & FOCUS
+   ========================================================================== */
+#contact .card,
+#contact [class*="contactWrapper"],
+#contact form,
+.contactWrapper {
+  transform: none !important;
+  transition: none !important;
+  cursor: default !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+
+  &:hover {
+    transform: none !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+    background: linear-gradient(145deg, rgba(13, 21, 38, 0.95) 0%, rgba(20, 30, 52, 0.95) 100%) !important;
+  }
+
+  &:active {
+    transform: none !important;
+    border-color: rgba(56, 189, 248, 0.22) !important;
+  }
+}
+
+#contact input.form-control,
+#contact textarea.form-control {
+  background-color: rgba(10, 17, 34, 0.85) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.25) !important;
+  color: #f8fafc !important;
+  border-radius: 12px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+
+  &:hover {
+    border-color: #38bdf8 !important;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35) !important;
+  }
+
+  &:focus {
+    border-color: #f43f5e !important;
+    box-shadow: 0 0 16px rgba(244, 63, 94, 0.45) !important;
+    outline: none !important;
+  }
+}
+
+#services .card,
+#experience .card {
+  background: linear-gradient(145deg, rgba(13, 21, 38, 0.95) 0%, rgba(20, 30, 52, 0.95) 100%) !important;
+  border: 1.5px solid rgba(56, 189, 248, 0.22) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+
+  &:hover {
+    transform: translateY(-8px) scale(1.01) !important;
+    border-color: #38bdf8 !important;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.95) 100%) !important;
+    box-shadow: 
+      0 18px 35px rgba(0, 0, 0, 0.85),
+      0 0 20px rgba(56, 189, 248, 0.4),
+      0 0 35px rgba(244, 63, 94, 0.28) !important;
+  }
+}
+
+/* ==========================================================================
+   FOOTER SECTION STYLES & HOVER
+   ========================================================================== */
+.footer-section {
+  background-color: rgba(11, 15, 23, 0.94) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.footer-link {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  padding: 4px 10px !important;
+  border-radius: 6px !important;
+  transition: all 0.22s ease !important;
+  display: inline-block;
+
+  &:hover {
+    color: #ff7849 !important;
+    text-shadow: 0 0 14px rgba(255, 120, 73, 0.7) !important;
+    transform: translateY(-2px);
+  }
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50% !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  background: rgba(15, 23, 42, 0.7) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  transition: all 0.22s ease !important;
+
+  &:hover {
+    border-color: #ff7849 !important;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 0 16px rgba(255, 120, 73, 0.5) !important;
+  }
 }

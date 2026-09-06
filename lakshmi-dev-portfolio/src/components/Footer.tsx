@@ -5,13 +5,7 @@ import styles from '../styles/components/navbar.module.scss';
 
 export const Footer: React.FC = () => {
   return (
-    <footer 
-      className="border-top border-secondary py-5 text-light position-relative z-1"
-      style={{
-        backgroundColor: 'rgba(11, 15, 23, 0.92)',
-        backdropFilter: 'blur(10px)',
-      }}
-    >
+    <footer className="footer-section border-top border-secondary py-5 text-light position-relative z-1">
       <div className="container">
         <div className="row g-4 justify-content-between align-items-center">
           
@@ -20,23 +14,24 @@ export const Footer: React.FC = () => {
             <a href="#home" className={`${styles.logo} text-decoration-none fs-4 fw-bold`}>
               LAKSHMI<span>.dev</span>
             </a>
-            <p className="text-muted small mt-2 mb-0" style={{ color: '#cbd5e1' }}>
+            <p className="text-light-50 small mt-2 mb-0">
               Full Stack Developer specializing in building responsive, high-performance web applications using React, Angular, Node.js, and PostgreSQL.
             </p>
           </div>
 
-          {/* Column 2: Quick Links */}
+          {/* Column 2: Quick Links with Orange Glow Hover */}
           <div className="col-lg-4 text-center">
-            <div className="d-flex gap-3 justify-content-center flex-wrap mb-2">
-              <a href="#home" className="text-secondary text-decoration-none small">Home</a>
-              <a href="#about" className="text-secondary text-decoration-none small">About</a>
-              <a href="#services" className="text-secondary text-decoration-none small">Services</a>
-              <a href="#skills" className="text-secondary text-decoration-none small">Skills</a>
-              <a href="#projects" className="text-secondary text-decoration-none small">Projects</a>
-              <a href="#contact" className="text-secondary text-decoration-none small">Contact</a>
+            <div className="d-flex gap-2 justify-content-center flex-wrap mb-3">
+              <a href="#home" className="footer-link">Home</a>
+              <a href="#about" className="footer-link">About</a>
+              <a href="#services" className="footer-link">Services</a>
+              <a href="#skills" className="footer-link">Skills</a>
+              <a href="#education" className="footer-link">Education</a>
+              <a href="#projects" className="footer-link">Projects</a>
+              <a href="#contact" className="footer-link">Contact</a>
             </div>
-            <p className="text-muted small mb-0" style={{ fontSize: '0.8rem' }}>
-              Designed & Developed with <Heart size={12} className="text-danger d-inline mx-1" /> by Lakshmi Mulinti
+            <p className="text-muted small mb-0">
+              Designed & Developed with <Heart size={13} className="text-danger d-inline mx-1" /> by Lakshmi Mulinti
             </p>
           </div>
 
@@ -45,13 +40,12 @@ export const Footer: React.FC = () => {
             <h4 className="h6 text-light fw-semibold mb-3">Connect with me</h4>
             <div className="d-flex gap-2 justify-content-center justify-content-lg-end">
               
-              {/* LinkedIn Vector SVG */}
+              {/* LinkedIn */}
               <a 
                 href="https://www.linkedin.com/in/lakshmi-mulinti-aaba97296" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style={{ width: '40px', height: '40px', borderColor: 'rgba(255,255,255,0.2)' }}
+                className="footer-social-btn"
                 title="LinkedIn"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -61,13 +55,12 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* GitHub Vector SVG */}
+              {/* GitHub */}
               <a 
                 href="https://github.com/lakshmimulinti" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style={{ width: '40px', height: '40px', borderColor: 'rgba(255,255,255,0.2)' }}
+                className="footer-social-btn"
                 title="GitHub"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f8fafc" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -76,13 +69,12 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* Instagram Vector SVG */}
+              {/* Instagram */}
               <a 
                 href="https://www.instagram.com/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style={{ width: '40px', height: '40px', borderColor: 'rgba(255,255,255,0.2)' }}
+                className="footer-social-btn"
                 title="Instagram"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e1306c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -92,11 +84,10 @@ export const Footer: React.FC = () => {
                 </svg>
               </a>
 
-              {/* Email Icon */}
+              {/* Email */}
               <a 
                 href="mailto:lakshmimulinti70@gmail.com" 
-                className="btn btn-outline-light rounded-circle p-2 d-flex align-items-center justify-content-center"
-                style={{ width: '40px', height: '40px', borderColor: 'rgba(255,255,255,0.2)' }}
+                className="footer-social-btn"
                 title="Email Me"
               >
                 <Mail size={18} className="text-warning" />
@@ -107,9 +98,9 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        <hr className="border-secondary my-4" style={{ opacity: 0.2 }} />
+        <hr className="border-secondary my-4 opacity-25" />
 
-        <div className="text-center text-muted small" style={{ color: '#94a3b8' }}>
+        <div className="text-center text-muted small">
           © {new Date().getFullYear()} Lakshmi Mulinti. All Rights Reserved.
         </div>
       </div>
