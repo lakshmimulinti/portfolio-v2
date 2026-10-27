@@ -6,6 +6,8 @@ import { ExternalLink } from 'lucide-react';
 import hostelImg from '../assets/hostel.png';
 import talentImg from '../assets/talent.png';
 import webDesignImg from '../assets/websitesdesign.png';
+import fintechMerchantImg from '../assets/fintechimages.jpg';
+import fintechAdminImg from '../assets/fintechimage.jpg';
 
 interface ProjectItem {
   id: string;
@@ -18,6 +20,24 @@ interface ProjectItem {
 }
 
 const projectData: ProjectItem[] = [
+  {
+    id: 'proj-fintech-merchant',
+    title: 'Fintech Merchant Payment Application',
+    description: 'Comprehensive Fintech Merchant platform for seamless digital payments, UPI transactions, invoice settlements, and secure checkout processing.',
+    tags: ['React.js', 'TypeScript', 'Node.js', 'Fintech', 'Payment Gateway'],
+    image: fintechMerchantImg,
+    liveUrl: 'https://payment-frontend-omx4.onrender.com/',
+    objectPosition: 'center'
+  },
+  {
+    id: 'proj-fintech-admin',
+    title: 'Fintech Admin Portal',
+    description: 'Robust centralized back-office administration portal for monitoring transactions, managing merchant accounts, reconciliation, and audit logs.',
+    tags: ['React.js', 'Dashboard', 'Admin Panel', 'REST APIs', 'Analytics'],
+    image: fintechAdminImg,
+    liveUrl: 'https://vvn-admin-frontend.onrender.com',
+    objectPosition: 'center'
+  },
   {
     id: 'proj-1',
     title: 'Hostel Hub Management System',
