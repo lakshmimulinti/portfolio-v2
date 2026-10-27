@@ -82,7 +82,7 @@ export const Hero: React.FC = () => {
             {/* Redesigned Button Actions */}
             <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
               <a 
-                href="https://drive.google.com/file/d/1uT2OQvJhYTh76Vtn7Ko_e-QXCwl8C1w8/view" 
+                href="https://drive.google.com/file/d/1NBYB2G118oMVPS3pXV9XUPwMGRXCtLJD/view?usp=sharing" 
                 target="_blank" 
                 rel="noreferrer" 
                 className={styles.btnDownloadCv}
