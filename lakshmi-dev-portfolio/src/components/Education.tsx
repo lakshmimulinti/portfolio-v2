@@ -54,7 +54,7 @@ export const Education: React.FC = () => {
     <AnimatedSection id="education" className="container py-5 border-top border-secondary">
       <div className="text-center mb-5">
         <h2 className="display-6 fw-bold text-light mb-1">Education & Certifications</h2>
-        <p className="text-muted">Academic qualification timeline & professional certifications</p>
+        <p className="section-subtitle">Academic qualification timeline & professional certifications</p>
       </div>
 
       <div className="row g-4">

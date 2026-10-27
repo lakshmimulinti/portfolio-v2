@@ -74,7 +74,7 @@ export const Portfolio: React.FC = () => {
         <h2 className="text-light fw-bold" style={{ textShadow: '0 4px 15px rgba(0,0,0,0.9)' }}>
           Featured Projects
         </h2>
-        <p className="fs-6" style={{ color: '#f1f5f9', textShadow: '0 2px 8px rgba(0,0,0,0.95)' }}>
+        <p className="section-subtitle">
           Real-world applications and platforms I have built
         </p>
       </div>

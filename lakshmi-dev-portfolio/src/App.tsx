@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import { StickyBg } from './components/StickyBg';
 import { Navbar } from './components/Navbar';
@@ -10,12 +9,14 @@ import { Education } from './components/Education';
 import { Experience } from './components/Experience';
 import { Portfolio } from './components/Portfolio';
 import { Contact } from './components/Contact';
-import { Footer } from './components/Footer'; // Import Footer
+import { Footer } from './components/Footer';
+import { CustomCursor } from './components/CustomCursor';
 import './styles/global.scss';
 
 export const App: React.FC = () => {
   return (
     <div className="app-root" style={{ position: 'relative', zIndex: 1 }}>
+      <CustomCursor />
       <StickyBg />
 
       <Navbar />

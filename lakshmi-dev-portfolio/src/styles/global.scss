@@ -9,6 +9,60 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* --------------------------------------------------
+   Theme CSS Variables Configuration
+   -------------------------------------------------- */
+:root,
+body[data-theme='rose'] {
+  --primary-color: #f43f5e;
+  --primary-hover: #e11d48;
+  --primary-glow: rgba(244, 63, 94, 0.5);
+  --accent-color: #fb7185;
+  --accent-light: #fda4af;
+  --badge-bg: rgba(244, 63, 94, 0.16);
+  --badge-border: rgba(244, 63, 94, 0.45);
+  --card-border-hover: #f43f5e;
+  --card-glow-hover: rgba(244, 63, 94, 0.45);
+  --bg-glow-1: rgba(244, 63, 94, 0.22);
+  --bg-glow-2: rgba(251, 113, 133, 0.14);
+  --avatar-ring: linear-gradient(135deg, #f43f5e 0%, #fb7185 50%, #fda4af 100%);
+}
+
+body[data-theme='cyan'] {
+  --primary-color: #06b6d4;
+  --primary-hover: #0891b2;
+  --primary-glow: rgba(6, 182, 212, 0.5);
+  --accent-color: #38bdf8;
+  --accent-light: #7dd3fc;
+  --badge-bg: rgba(6, 182, 212, 0.16);
+  --badge-border: rgba(6, 182, 212, 0.45);
+  --card-border-hover: #06b6d4;
+  --card-glow-hover: rgba(6, 182, 212, 0.45);
+  --bg-glow-1: rgba(6, 182, 212, 0.22);
+  --bg-glow-2: rgba(56, 189, 248, 0.14);
+  --avatar-ring: linear-gradient(135deg, #06b6d4 0%, #38bdf8 50%, #818cf8 100%);
+}
+
+body[data-theme='emerald'] {
+  --primary-color: #10b981;
+  --primary-hover: #059669;
+  --primary-glow: rgba(16, 185, 129, 0.5);
+  --accent-color: #34d399;
+  --accent-light: #6ee7b7;
+  --badge-bg: rgba(16, 185, 129, 0.16);
+  --badge-border: rgba(16, 185, 129, 0.45);
+  --card-border-hover: #10b981;
+  --card-glow-hover: rgba(16, 185, 129, 0.45);
+  --bg-glow-1: rgba(16, 185, 129, 0.22);
+  --bg-glow-2: rgba(52, 211, 153, 0.14);
+  --avatar-ring: linear-gradient(135deg, #10b981 0%, #34d399 50%, #a7f3d0 100%);
+}
+
+/* Smooth background transition across entire page */
+html, body, .app-root {
+  transition: background-color 0.5s ease, color 0.4s ease;
+}
+
 /* Headings */
 h2, .section-title {
   color: #ffffff !important;
@@ -17,9 +71,49 @@ h2, .section-title {
   text-shadow: 0 4px 18px rgba(0, 0, 0, 0.9) !important;
 }
 
+/* Highly visible section subtitles with theme-reactive border and subtle glow */
+.section-subtitle {
+  color: #f1f5f9 !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95);
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--badge-bg, rgba(15, 23, 42, 0.75)) !important;
+  border: 1.5px solid var(--badge-border, rgba(56, 189, 248, 0.45)) !important;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px var(--primary-glow, rgba(0, 0, 0, 0.4));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  margin-top: 4px;
+  transition: border-color 0.35s ease, background-color 0.35s ease, box-shadow 0.35s ease !important;
+}
+
 .text-muted {
-  color: #94a3b8 !important;
-  font-size: 0.92rem;
+  color: #cbd5e1 !important;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Dynamic theme support for buttons and highlights */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 4px 15px var(--primary-glow) !important;
+  transition: all 0.25s ease !important;
+
+  &:hover {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    box-shadow: 0 6px 22px var(--primary-glow) !important;
+    transform: translateY(-2px);
+  }
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+  transition: color 0.25s ease;
 }
 
 /* ==========================================================================
@@ -57,12 +151,12 @@ h2, .section-title {
 
   &:hover {
     transform: translateY(-8px) scale(1.015) !important;
-    border-color: #38bdf8 !important;
+    border-color: var(--card-border-hover, #38bdf8) !important;
     background: linear-gradient(145deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.96) 100%) !important;
     box-shadow: 
       0 18px 35px rgba(0, 0, 0, 0.85),
-      0 0 22px rgba(56, 189, 248, 0.45),
-      0 0 35px rgba(244, 63, 94, 0.3) !important;
+      0 0 25px var(--card-glow-hover, rgba(56, 189, 248, 0.45)),
+      0 0 35px rgba(0, 0, 0, 0.5) !important;
     z-index: 10 !important;
   }
 
@@ -132,7 +226,8 @@ h2, .section-title {
 }
 
 .hero-name-highlight {
-  color: #ff5e62;
+  color: var(--primary-color, #f43f5e) !important;
+  transition: color 0.3s ease;
 }
 
 .btn-download-cv {
@@ -325,12 +420,12 @@ h2, .section-title {
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       transform: translateY(-8px) scale(1.015) !important;
-      border-color: #38bdf8 !important;
+      border-color: var(--card-border-hover, #38bdf8) !important;
       background: linear-gradient(145deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.96) 100%) !important;
       box-shadow: 
         0 18px 35px rgba(0, 0, 0, 0.85),
-        0 0 22px rgba(56, 189, 248, 0.45),
-        0 0 35px rgba(244, 63, 94, 0.3) !important;
+        0 0 25px var(--card-glow-hover, rgba(56, 189, 248, 0.45)),
+        0 0 35px rgba(0, 0, 0, 0.5) !important;
     }
   }
 
@@ -338,10 +433,10 @@ h2, .section-title {
   &:active,
   &:focus {
     transform: scale(0.98) !important;
-    border-color: #38bdf8 !important;
+    border-color: var(--card-border-hover, #38bdf8) !important;
     background: linear-gradient(145deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 27, 75, 0.96) 100%) !important;
     box-shadow: 
-      0 0 25px rgba(56, 189, 248, 0.55),
-      0 0 40px rgba(244, 63, 94, 0.4) !important;
+      0 0 25px var(--card-glow-hover, rgba(56, 189, 248, 0.55)),
+      0 0 40px rgba(0, 0, 0, 0.5) !important;
   }
 }

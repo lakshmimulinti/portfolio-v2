@@ -5,10 +5,18 @@ import { Palette } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [theme, setTheme] = useState<'rose' | 'cyan' | 'emerald'>('rose');
+  const [theme, setTheme] = useState<'rose' | 'cyan' | 'emerald'>(() => {
+    const saved = localStorage.getItem('user-theme');
+    if (saved === 'cyan' || saved === 'emerald' || saved === 'rose') {
+      return saved;
+    }
+    return 'rose';
+  });
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('user-theme', theme);
   }, [theme]);
 
   return (
@@ -25,26 +33,53 @@ export const Navbar: React.FC = () => {
             
             {/* Rose Dot */}
             <button
+              type="button"
               onClick={() => setTheme('rose')}
-              className={`btn p-0 rounded-circle ${theme === 'rose' ? 'border border-light' : ''}`}
-              style={{ width: '18px', height: '18px', backgroundColor: '#f43f5e' }}
+              className="btn p-0 rounded-circle"
+              style={{ 
+                width: '18px', 
+                height: '18px', 
+                backgroundColor: '#f43f5e',
+                boxShadow: theme === 'rose' ? '0 0 0 2px #ffffff, 0 0 10px #f43f5e' : 'none',
+                transform: theme === 'rose' ? 'scale(1.15)' : 'scale(1)',
+                transition: 'all 0.2s ease'
+              }}
               title="Rose Theme"
+              aria-label="Switch to Rose Theme"
             />
             
             {/* Cyan Dot */}
             <button
+              type="button"
               onClick={() => setTheme('cyan')}
-              className={`btn p-0 rounded-circle ${theme === 'cyan' ? 'border border-light' : ''}`}
-              style={{ width: '18px', height: '18px', backgroundColor: '#06b6d4' }}
+              className="btn p-0 rounded-circle"
+              style={{ 
+                width: '18px', 
+                height: '18px', 
+                backgroundColor: '#06b6d4',
+                boxShadow: theme === 'cyan' ? '0 0 0 2px #ffffff, 0 0 10px #06b6d4' : 'none',
+                transform: theme === 'cyan' ? 'scale(1.15)' : 'scale(1)',
+                transition: 'all 0.2s ease'
+              }}
               title="Cyan Theme"
+              aria-label="Switch to Cyan Theme"
             />
             
             {/* Emerald Dot */}
             <button
+              type="button"
               onClick={() => setTheme('emerald')}
-              className={`btn p-0 rounded-circle ${theme === 'emerald' ? 'border border-light' : ''}`}
-              style={{ width: '18px', height: '18px', backgroundColor: '#10b981' }}
+              className="btn p-0 rounded-circle"
+              style={{ 
+                width: '18px', 
+                height: '18px', 
+                backgroundColor: '#10b981',
+                boxShadow: theme === 'emerald' ? '0 0 0 2px #ffffff, 0 0 10px #10b981' : 'none',
+                transform: theme === 'emerald' ? 'scale(1.15)' : 'scale(1)',
+                transition: 'all 0.2s ease'
+              }}
               title="Emerald Theme"
+              aria-label="Switch to Emerald Theme"
             />
           </div>
 

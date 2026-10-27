@@ -17,7 +17,7 @@ export const Services: React.FC = () => {
     <AnimatedSection id="services" className="container py-5 border-top border-secondary">
       <div className="text-center mb-5">
         <h2 className="display-6 fw-bold text-light mb-1">My Services</h2>
-        <p className="text-muted">What I offer for your business</p>
+        <p className="section-subtitle">What I offer for your business</p>
       </div>
 
       <div className="row g-4">

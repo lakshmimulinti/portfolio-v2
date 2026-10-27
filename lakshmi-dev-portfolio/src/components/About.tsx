@@ -1,7 +1,7 @@
-// src/components/About.tsx
 import React from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { User, Mail, Phone, MapPin, GraduationCap, Globe, Briefcase } from 'lucide-react';
+import { GithubContributions } from './GithubContributions';
 
 export const About: React.FC = () => {
   const personalInfo = [
@@ -64,61 +64,69 @@ export const About: React.FC = () => {
   ];
 
   return (
-    <AnimatedSection id="about" className="container py-5 border-top border-secondary">
-      <div className="text-center mb-5">
-        <h2 className="display-6 fw-bold text-light mb-1">About Me</h2>
-        <p className="text-muted">Full Stack Developer with 1+ Years Experience Track</p>
-      </div>
-
-      <div className="row g-4 align-items-stretch">
-        {/* Left Column Bio */}
-        <div className="col-lg-6">
-          <div className="card p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
-            <h3 className="h4 text-light fw-bold mb-3">
-              I'm Mulinti Lakshmi, <span style={{ color: '#ff5e62' }}>Full Stack Developer</span>
-            </h3>
-            <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: '1.8' }} className="mb-3">
-              Full Stack Developer specializing in building enterprise-scale, resilient, and high-performance applications with React.js, Next.js, Angular, Node.js, Python, and PostgreSQL.
-            </p>
-            <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: '1.8' }} className="mb-0">
-              Skilled in modern frontend-backend micro-architectures, REST API design, JWT session management, and database optimization. Experienced in developing enterprise dashboards, banking solutions, and high-traffic web apps.
-            </p>
-          </div>
+    <AnimatedSection 
+      id="about" 
+      className="container py-5 border-top border-secondary position-relative"
+    >
+      <div className="position-relative z-1">
+        <div className="text-center mb-5">
+          <h2 className="display-6 fw-bold text-light mb-1">About Me</h2>
+          <p className="section-subtitle">Full Stack Developer with 1+ Years Experience Track</p>
         </div>
 
-        {/* Right Column: Info Grid with Colorful Rounded Icons */}
-        <div className="col-lg-6">
-          <div className="row g-3">
-            {personalInfo.map((info, idx) => (
-              <div key={idx} className="col-sm-6">
-                <div className="card p-3 d-flex flex-row align-items-center gap-3">
-                  <div 
-                    style={{
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      backgroundColor: info.bg,
-                      color: info.color,
-                      border: `1.5px solid ${info.color}55`,
-                      flexShrink: 0
-                    }}
-                  >
-                    {info.icon}
-                  </div>
-                  <div style={{ overflow: 'hidden' }}>
-                    <span className="d-block text-muted" style={{ fontSize: '0.78rem' }}>{info.label}</span>
-                    <strong className="text-light text-truncate d-block" style={{ fontSize: '0.88rem' }}>
-                      {info.value}
-                    </strong>
+        <div className="row g-4 align-items-stretch">
+          {/* Left Column Bio */}
+          <div className="col-lg-6">
+            <div className="card p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
+              <h3 className="h4 text-light fw-bold mb-3">
+                I'm Mulinti Lakshmi, <span style={{ color: 'var(--primary-color, #f43f5e)', transition: 'color 0.3s ease' }}>Full Stack Developer</span>
+              </h3>
+              <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: '1.8' }} className="mb-3">
+                Full Stack Developer specializing in building enterprise-scale, resilient, and high-performance applications with React.js, Next.js, Angular, Node.js, Python, and PostgreSQL.
+              </p>
+              <p style={{ color: '#cbd5e1', fontSize: '1rem', lineHeight: '1.8' }} className="mb-0">
+                Skilled in modern frontend-backend micro-architectures, REST API design, JWT session management, and database optimization. Experienced in developing enterprise dashboards, banking solutions, and high-traffic web apps.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: Info Grid with Colorful Rounded Icons */}
+          <div className="col-lg-6">
+            <div className="row g-3">
+              {personalInfo.map((info, idx) => (
+                <div key={idx} className="col-sm-6">
+                  <div className="card p-3 d-flex flex-row align-items-center gap-3">
+                    <div 
+                      style={{
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        backgroundColor: info.bg,
+                        color: info.color,
+                        border: `1.5px solid ${info.color}55`,
+                        flexShrink: 0
+                      }}
+                    >
+                      {info.icon}
+                    </div>
+                    <div style={{ overflow: 'hidden' }}>
+                      <span className="d-block text-muted" style={{ fontSize: '0.78rem' }}>{info.label}</span>
+                      <strong className="text-light text-truncate d-block" style={{ fontSize: '0.88rem' }}>
+                        {info.value}
+                      </strong>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
+
+        {/* GitHub Live Track Heatmap Grid */}
+        <GithubContributions />
       </div>
     </AnimatedSection>
   );

@@ -7,7 +7,7 @@ export const Experience: React.FC = () => {
     <AnimatedSection id="experience" className="container py-5 border-top border-secondary">
       <div className="text-center mb-5">
         <h2 className="display-6 fw-bold text-light mb-1">Work Experience</h2>
-        <p className="text-muted">My professional software development track</p>
+        <p className="section-subtitle">My professional software development track</p>
       </div>
 
       <div className="row justify-content-center">

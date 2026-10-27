@@ -6,13 +6,15 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   id?: string;
+  style?: React.CSSProperties;
 }
 
-export const AnimatedSection: React.FC<Props> = ({ children, className = '', id }) => {
+export const AnimatedSection: React.FC<Props> = ({ children, className = '', id, style }) => {
   return (
     <motion.section
       id={id}
       className={className}
+      style={style}
       initial={{ opacity: 0, y: 55 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.12 }}

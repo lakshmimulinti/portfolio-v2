@@ -2,11 +2,42 @@
 import React from 'react';
 import styles from '../styles/components/hero.module.scss';
 import profileImg from '../assets/profileimg.png';
+import robotVideo from '../assets/robot-bg.mp4';
 import { MapPin } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className={`container-fluid ${styles.heroSection} overflow-hidden`}>
+    <section id="home" className={`container-fluid ${styles.heroSection} overflow-hidden position-relative`}>
+      {/* Background Video strictly in Home (Hero) page */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          zIndex: 0,
+          overflow: 'hidden',
+          pointerEvents: 'none',
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 1,
+            filter: 'none',
+          }}
+        >
+          <source src={robotVideo} type="video/mp4" />
+        </video>
+      </div>
+
       <div className="container position-relative z-1">
         <div className="row align-items-center g-4 g-lg-5">
           
@@ -29,7 +60,7 @@ export const Hero: React.FC = () => {
             </h1>
             
             <h2 className={styles.subtitle}>
-              Full Stack Developer <span className="text-secondary fs-6 fw-normal">| 1+ Years Track</span>
+              Full Stack Developer <span className={styles.experienceBadge}>| 1+ Years Track</span>
             </h2>
             
             {/* Skills Card with Proper Interior Padding */}

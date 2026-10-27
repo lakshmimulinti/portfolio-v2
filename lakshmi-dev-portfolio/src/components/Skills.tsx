@@ -29,7 +29,7 @@ export const Skills: React.FC = () => {
     <AnimatedSection id="skills" className="container py-5 border-top border-secondary">
       <div className="text-center mb-5">
         <h2 className="display-6 fw-bold text-light mb-1">Technical Skills</h2>
-        <p className="text-muted">Technologies, frameworks, and architecture tools I work with</p>
+        <p className="section-subtitle">Technologies, frameworks, and architecture tools I work with</p>
       </div>
 
       <div className="row g-4">
