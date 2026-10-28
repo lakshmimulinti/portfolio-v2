@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
             <li className="nav-item"><a href="#education" className={styles.navLink} onClick={() => setIsOpen(false)}>Education</a></li>
             <li className="nav-item"><a href="#experience" className={styles.navLink} onClick={() => setIsOpen(false)}>Experience</a></li>
             <li className="nav-item"><a href="#projects" className={styles.navLink} onClick={() => setIsOpen(false)}>Projects</a></li>
-            <li className="nav-item"><a href="#contact" className={styles.navLink} onClick={() => setIsOpen(false)}>Contact</a></li>
+            {/* <li className="nav-item"><a href="#contact" className={styles.navLink} onClick={() => setIsOpen(false)}>Contact</a></li> */}
           </ul>
         </div>
       </nav>

@@ -16,7 +16,7 @@ export const Experience: React.FC = () => {
           <div className="card p-4 mb-4">
             <div className="d-flex justify-content-between align-items-center mb-2 flex-wrap">
               <h3 className="h5 text-primary fw-bold mb-0">Full Stack Developer</h3>
-              <span className="year-pill">Jun 2025 – Present</span>
+              <span className="year-pill">Jun 2025 – june 2026</span>
             </div>
             <h4 className="h6 text-light mb-3">Innostes Solutions Pvt Ltd — Hyderabad</h4>
             <ul className="small ps-3 mb-0 text-light-50">
@@ -30,7 +30,7 @@ export const Experience: React.FC = () => {
           <div className="card p-4">
             <div className="d-flex justify-content-between align-items-center mb-2 flex-wrap">
               <h3 className="h5 text-primary fw-bold mb-0">Angular Developer Intern</h3>
-              <span className="year-pill">Apr 2024 – Jun 2024</span>
+              <span className="year-pill">Apr 2025 – Jun 2025</span>
             </div>
             <h4 className="h6 text-light mb-3">VMANICO Technologies — Hyderabad</h4>
             <ul className="small ps-3 mb-0 text-light-50">

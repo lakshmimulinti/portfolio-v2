@@ -5,7 +5,7 @@ import { GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 
 const certifications = [
   {
-    year: '2023 – 2024',
+    year: '2024 – 2024',
     title: 'Python Full Stack Developer Certification',
     inst: 'Naresh Institute of Technologies (Naresh i Technologies)',
     score: 'Distinction',
@@ -13,7 +13,7 @@ const certifications = [
     status: 'Industry Certified'
   },
   {
-    year: '2023',
+    year: '2024',
     title: 'Full Stack Web Development Certification',
     inst: 'Naresh Institute of Technologies',
     score: 'Certified',
@@ -27,7 +27,7 @@ const academicData = [
     year: '2021 – 2023',
     degree: 'Master of Computer Applications (MCA)',
     inst: 'Sri Sai College of IT & Management, Kadapa',
-    score: '8.4 CGPA',
+    score: '84%',
     desc: 'Advanced Algorithms, Database Management, and Enterprise Software Engineering.',
     status: 'Completed with Distinction'
   },
@@ -85,7 +85,7 @@ export const Education: React.FC = () => {
                     <h4 className="h6 text-light fw-bold mb-1">{cert.title}</h4>
                     <p className="small text-info mb-2">{cert.inst}</p>
                     <p className="small text-muted mb-3">{cert.desc}</p>
-                    
+
                     <div className="d-flex align-items-center gap-1 small text-success fw-semibold">
                       <CheckCircle2 size={15} /> {cert.status}
                     </div>
@@ -123,7 +123,7 @@ export const Education: React.FC = () => {
                     <h4 className="h6 text-light fw-bold mb-1">{edu.degree}</h4>
                     <p className="small text-info mb-2">{edu.inst}</p>
                     <p className="small text-muted mb-3">{edu.desc}</p>
-                    
+
                     <div className="d-flex align-items-center gap-1 small text-success fw-semibold">
                       <CheckCircle2 size={15} /> {edu.status}
                     </div>
